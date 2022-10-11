@@ -1,5 +1,6 @@
 import struct 
 
+#   Given to me
 #   Bit-packing writer for Huffman encoder
 class HuffmanBitWriter:
     # side effect: open a file with file name 'fname' for writing in binary mode
