@@ -1,6 +1,6 @@
 #
 #   Bit-packing reader and writer for Huffman encoder and decoder
-#
+#   Given to me
 
 import struct 
    
