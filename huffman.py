@@ -48,8 +48,6 @@ def create_huff_tree(char_freq):
     index = 0
     for freq in char_freq:
         new = HuffmanNode(index, freq)
-        # print(new.freq)
-        # print(new.char)
         if freq > 0:
             lst.add(new)
         index += 1
@@ -71,18 +69,9 @@ def create_huff_tree(char_freq):
     root = lst.pop(0)
     return root
 
-    # print(lst.python_list())
-    # print(lst.index(HuffmanNode(0, 2)))
-    # print(lst.index(HuffmanNode(5, 2)))
-    # print(lst.index(HuffmanNode(1, 4)))
-    # print(lst.index(HuffmanNode(2, 8)))
-    # print(lst.index(HuffmanNode(8, 16)))
-    # print(lst.index(HuffmanNode(3, 16)))
-    # print(lst.search(HuffmanNode(4, 0)))
-
 
 def create_code(node):
-    '''Returns an array (Python list) of Huffman codes. For each character, use the integer ASCII representation 
+    '''Returns an array (Python list) of Huffman codes. For each character, uses the integer ASCII representation 
     as the index into the arrary, with the resulting Huffman code for that character stored at that location'''
     result = [''] * 256
     value = ''
@@ -119,8 +108,7 @@ def huffman_encode(in_file, out_file):
     Uses the Huffman coding process on the text from the input file and writes encoded text to output file
     Also creates a second output file which adds _compressed before the .txt extension to the name of the file.
     This second file is actually compressed by writing individual 0 and 1 bits to the file using the utility methods 
-    provided in the huffman_bits_io module to write both the header and bits.
-    Take not of special cases - empty file and file with only one unique character'''
+    provided in the huffman_bits_io module to write both the header and bits.'''
     try:
         with open(in_file, 'r') as file:
             text = file.read()
@@ -203,14 +191,3 @@ def total(header_string):
     for i in range(1, len(freq_list), 2):
         sum += int(freq_list[i])
     return sum
-
-# testlist = "dddddd ccccffaa"
-# for character in testlist:
-#     print(character)
-#
-# y = ord(' ')
-# print(y)
-
-# testlist2 = [2, 4, 8, 16, 0, 2, 0, 1, 16]
-# create_huff_tree(testlist2)
-
